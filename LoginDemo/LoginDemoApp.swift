@@ -1,12 +1,19 @@
-// LoginDemoApp.swift
+
 
 import SwiftUI
 
+
 @main
 struct LoginDemoApp: App {
+    
+    @StateObject var model: Model = Model()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            LoginView()
+                .environmentObject(self.model)
+                .preferredColorScheme(.dark)
         }
     }
+    
 }
